@@ -1,0 +1,18 @@
+
+:root {
+    height: 100%;
+    cursor: default;
+    font-family: gordita,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+body {
+    background-color: #f6f8f9;
+    height: inherit;
+}
+
+#root {
+    height: inherit;
+}
