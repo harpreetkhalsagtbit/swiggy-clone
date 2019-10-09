@@ -1,0 +1,12 @@
+.restaurant-list {
+    margin-bottom: 85px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin-left: 15%;
+    position: relative;
+    /* flex-wrap: wrap; */
+}

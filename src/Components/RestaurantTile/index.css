@@ -1,0 +1,88 @@
+.restaurant-tile {
+    position: relative;
+    width: 254px;
+    flex: 1 0 30%; /* explanation below */
+}
+
+.restaurant-tile-wrapper {
+    background: #fff;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin: -20px -20px -41px;
+}
+
+.restaurant-tile-body {
+    position: relative;
+    padding: 20px 20px 57px;
+    border: 1px solid #fff;
+    contain: content;
+
+    width: 254px;
+}
+
+.restaurant-tile-body-image-wrapper {
+    background: #eef0f5;
+    width: 254px;
+    height: 160px;
+    position: relative;
+}
+
+.restaurant-tile-body-title-wrapper {
+    margin-top: 14px;
+}
+
+.restaurant-tile-body-title {
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.restaurant-tile-body-subtitle {
+    color: #686b78;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.restaurant-tile-body-desc-wrapper {
+    display: flex;
+    align-items: center;
+    
+    margin-top: 18px;
+    font-size: 12px;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: #535665;
+}
+
+.restaurant-tile-body-desc-ratings {
+    display: flex;
+    align-items: center;
+
+    background-color: #48c479;
+    color: #fff;
+
+    height: 20px;
+    width: 43px;
+    padding: 0 5px;
+    font-weight: 400;
+}
+
+[class^=icon-] {
+    font-family: icomoon;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.restaurant-tile-body-desc-ratings .icon-star{
+    font-size: 10px;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}

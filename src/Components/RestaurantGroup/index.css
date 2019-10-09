@@ -1,0 +1,15 @@
+.restaurant-group {
+    margin: 30px;
+}
+
+.restaurant-group-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-group-title {
+    height: 50px;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
