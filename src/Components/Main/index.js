@@ -50,23 +50,36 @@ class Main extends React.PureComponent {
   }
 
   updateSelected(item) {
-    let found = this.childGroupDomRef.find((ref) => {
-      return item == ref.title
-    })
-    this.setState((previousState, previousProps) => {
-      return {
-        ...previousState,
-        disableScrollEvent:true
-      };
-    }, () => {
-      window.scrollTo(0,found.domOffsetTop)
+    if(item != 'See All') {
+      let found = this.childGroupDomRef.find((ref) => {
+        return item == ref.title
+      })
       this.setState((previousState, previousProps) => {
         return {
           ...previousState,
-          disableScrollEvent:false
+          disableScrollEvent:true
+        };
+      }, () => {
+        window.scrollTo(0,found.domOffsetTop)
+        this.setState((previousState, previousProps) => {
+          return {
+            ...previousState,
+            disableScrollEvent:false
+          };
+        })
+      })
+    } else {
+      console.log('se all')
+      this.setState((previousState, previousProps) => {
+        return {
+          ...previousState,
+          selected: item,
+          disableScrollEvent:true
         };
       })
-    })
+
+    }
+
   }
 
   render() {
