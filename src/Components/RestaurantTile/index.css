@@ -68,6 +68,14 @@
     font-weight: 400;
 }
 
+.star {
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}
+
 [class^=icon-] {
     font-family: icomoon;
     speak: none;

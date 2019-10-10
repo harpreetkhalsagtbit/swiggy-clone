@@ -14,7 +14,7 @@ const RestaurantTile = ({ restaurant }) => {
                             <div className="restaurant-tile-body-subtitle" title={restaurant.food_types.join(', ')}>{restaurant.food_types.join(', ')}</div>
                         </div>
                         <div className="restaurant-tile-body-desc-wrapper">
-                            <div className="restaurant-tile-body-desc-ratings"><span className="icon-star"></span><span>{restaurant.ratings || "N/A"}</span></div>
+                            <div className="restaurant-tile-body-desc-ratings"><span className="star">&#9734;</span><span>{restaurant.ratings || "N/A"}</span></div>
                             <div>•</div>
                             <div>{restaurant.delivery_time}</div>
                             <div>•</div>

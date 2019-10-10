@@ -1,0 +1,19 @@
+.show-more-tile {
+    position: relative;
+    width: 254px;
+    background-color: #fff;
+    flex: 1 0 30%; /* explanation below */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #e46d47;
+}
+
+.show-more-title {
+    font-size: 24px;
+    color:#e46d47;
+    cursor: pointer;
+    font-weight: 600;
+}
+
