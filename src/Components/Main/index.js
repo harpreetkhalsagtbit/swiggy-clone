@@ -9,6 +9,7 @@ class Main extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
+      data,
       selected:'popular brands',
       disableScrollEvent: false
     }
@@ -34,8 +35,8 @@ class Main extends React.PureComponent {
     // of category gets clashed, we need to prevent this default scroll
     // event when category is clicked
     if(!this.state.disableScrollEvent) {
-      let found = this.childGroupDomRef.find((ref) => {
-        return ref.domOffsetTop - window.scrollY + window.screen.availHeight - 200 > 0
+      let found = this.childGroupDomRef.find((ref) => {  
+        return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 200 > 0
       })
 
       if(found) {
@@ -60,16 +61,34 @@ class Main extends React.PureComponent {
           disableScrollEvent:true
         };
       }, () => {
-        window.scrollTo(0,found.domOffsetTop)
-        this.setState((previousState, previousProps) => {
-          return {
-            ...previousState,
-            disableScrollEvent:false
-          };
-        })
+        // if RestaurantList component is not Unmounted - By clicking on Select All
+        if(found.domRef.current) {
+          window.scrollTo(0,found.domRef.current.offsetTop)
+          this.setState((previousState, previousProps) => {
+            return {
+              ...previousState,
+              disableScrollEvent:false
+            };
+          })
+        } else {
+          // RestaurantList was unmounted
+          // We need update domRef
+          // 1. flush all prev Ref
+          this.childGroupDomRef.splice(0)
+          // Reset state - This will re-render child and we will
+          // get new dom ref
+          this.setState((previousState, previousProps) => {
+            return {
+              ...previousState,
+              selected: found.title
+            };
+          }, () => {
+            this.updateSelected(found.title)
+          })
+        }
       })
     } else {
-      console.log('se all')
+      window.scrollTo(0,0)
       this.setState((previousState, previousProps) => {
         return {
           ...previousState,

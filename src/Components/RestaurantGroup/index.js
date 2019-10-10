@@ -21,11 +21,8 @@ class RestaurantGroup extends React.PureComponent {
   }
 
   componentDidMount() {
-    // it was slow pushing complete dom ref,
-    // so instead pusing top offset
     this.props.addChildRef({
-      domOffsetTop: this.myRef.current.offsetTop,
-      domOffsetHeight: this.myRef.current.offsetHeight,
+      domRef: this.myRef,
       title: this.props.group.category
     })
   }
