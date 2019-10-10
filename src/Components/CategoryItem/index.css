@@ -1,12 +1,20 @@
 .category-list .item {
     text-transform: capitalize;
     padding: 15px;
+    color: #535665;
+    background-color: #fff !important;
+}
+
+.category-list .active {
+    text-transform: capitalize;
+    padding: 15px;
+    color: #fff;
+    background-color: #e46d47 !important;
 }
 
 .title {
     font-size: 16px;
     font-weight: 600;
-    color: #535665;
 }
 
 .desc {
@@ -18,4 +26,8 @@
 
 .category-list .item:hover .title, .category-list .item:hover .desc{
     color: #e46d47 !important;
+}
+
+.category-list .active:hover .title, .category-list .active:hover .desc{
+    color: #fff !important;
 }

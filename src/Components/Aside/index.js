@@ -1,15 +1,15 @@
 import React from "react";
 import "./index.css";
 import CategoryList from '../CategoryList'
-const AsideLeft = ({data}) => {
+const AsideLeft = React.memo(({data, selected, updateSelected}) => {
   let categories = sanitizeData(data)
 
   return (
     <aside>
-      <CategoryList categories={categories}></CategoryList>
+      <CategoryList categories={categories}  selected={selected} updateSelected={updateSelected}></CategoryList>
     </aside>
   );
-};
+});
 
 function sanitizeData(data) {
   let total = 0;

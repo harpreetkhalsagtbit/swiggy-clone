@@ -3,12 +3,12 @@ import React from "react";
 import "./index.css";
 import RestaurantGroup from "../RestaurantGroup"
 
-const RestaurantList = ({data}) => {
+const RestaurantList = ({data, selected, addChildRef}) => {
   let list = sanitizeData(data)
   return (
     <div className="restaurant-list">
         {list.map((category, index) => {
-          return <RestaurantGroup key={index} group={category}></RestaurantGroup>
+          return <RestaurantGroup key={index} group={category} selected={selected} addChildRef={addChildRef}></RestaurantGroup>
         })}
     </div>
   );
