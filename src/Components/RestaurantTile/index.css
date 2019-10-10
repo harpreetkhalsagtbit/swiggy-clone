@@ -2,6 +2,8 @@
     position: relative;
     width: 254px;
     flex: 1 0 30%; /* explanation below */
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 .restaurant-tile-wrapper {
@@ -93,4 +95,38 @@
     margin-right: 4px;
     position: relative;
     top: -1px;
+}
+
+.restaurant-tile-body-quick-view {
+    color: #686b78;
+    font-size: 13px;
+    visibility: hidden;
+    border-top: 1px solid #e9e9eb;
+    padding-top: 14px;
+    margin-top: 14px;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 14px;
+}
+
+.restaurant-tile-body-quick-view-title {
+    text-align: center;
+    float: none;
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    color: #5d8ed5;
+    /* float: right; */
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.restaurant-tile-body:hover {
+    border-color: #d3d5df;
+    box-shadow: 0 4px 7px 0 rgba(218,220,230,.6);
+}
+
+.restaurant-tile-body:hover .restaurant-tile-body-quick-view {
+    visibility: visible;
 }

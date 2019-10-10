@@ -3,23 +3,30 @@ import React from "react";
 import "./index.css";
 import RestaurantGroup from "../RestaurantGroup"
 import RestaurantTile from "../RestaurantTile"
+import EmptyTile from "../EmptyTile"
 
 const RestaurantList = ({data, selected, addChildRef}) => {
   let list = sanitizeData(data)
-  console.log(selected)
+  let total = list.reduce((acc, item) => {
+    if(item.category != 'Only on Swiggy') {
+      acc += item.restaurantList.length
+    }
+    return acc;
+  }, 0)
   return (
     <div className="restaurant-list">
-      {isSeeAll(data, selected, list, addChildRef)}
+      {renderRestaurantList(data, selected, list, addChildRef, total)}
     </div>
   );
 };
 
-function isSeeAll (data, selected, list, addChildRef) {
+function renderRestaurantList (data, selected, list, addChildRef, total) {
   if(selected != 'See All') {
     return list.map((category, index) => {
       return <RestaurantGroup key={index} group={category} selected={selected} addChildRef={addChildRef}></RestaurantGroup>
     })
   } else {
+    console.log(total, 'total')
     return (
       <div className="restaurant-group">
         <div className="restaurant-group-title">See All</div>
@@ -33,6 +40,10 @@ function isSeeAll (data, selected, list, addChildRef) {
                 })
             )
           })}
+          {
+            (total % 3 == 2) ? <EmptyTile></EmptyTile> : ''
+          }
+
         </div>
       </div>
     )

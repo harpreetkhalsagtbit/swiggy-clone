@@ -36,7 +36,7 @@ class Main extends React.PureComponent {
     // event when category is clicked
     if(!this.state.disableScrollEvent) {
       let found = this.childGroupDomRef.find((ref) => {  
-        return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 200 > 0
+        return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 300 > 0
       })
 
       if(found) {
