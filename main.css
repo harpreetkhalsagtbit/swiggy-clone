@@ -1,0 +1,219 @@
+aside {
+    position: fixed;
+    top:0px;
+    z-index: 2;
+}
+.category-list .item {
+    text-transform: capitalize;
+    padding: 15px;
+    color: #535665;
+    background-color: #fff !important;
+}
+
+.category-list .active {
+    text-transform: capitalize;
+    padding: 15px;
+    color: #fff;
+    background-color: #e46d47 !important;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.desc {
+    opacity: .8;
+    font-size: 10px;
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+.category-list .item:hover .title, .category-list .item:hover .desc{
+    color: #e46d47 !important;
+}
+
+.category-list .active:hover .title, .category-list .active:hover .desc{
+    color: #fff !important;
+}
+.category-list {
+    padding: 10px;
+}
+
+.restaurant-list {
+    margin-bottom: 85px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin-left: 15%;
+    position: relative;
+    /* flex-wrap: wrap; */
+}
+.restaurant-group {
+    margin: 30px;
+}
+
+.restaurant-group-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-group-title {
+    height: 50px;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.restaurant-tile {
+    position: relative;
+    width: 254px;
+    flex: 1 0 30%; /* explanation below */
+}
+
+.restaurant-tile-wrapper {
+    background: #fff;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin: -20px -20px -41px;
+}
+
+.restaurant-tile-body {
+    position: relative;
+    padding: 20px 20px 57px;
+    border: 1px solid #fff;
+    contain: content;
+
+    width: 254px;
+}
+
+.restaurant-tile-body-image-wrapper {
+    background: #eef0f5;
+    width: 254px;
+    height: 160px;
+    position: relative;
+}
+
+.restaurant-tile-body-title-wrapper {
+    margin-top: 14px;
+}
+
+.restaurant-tile-body-title {
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.restaurant-tile-body-subtitle {
+    color: #686b78;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.restaurant-tile-body-desc-wrapper {
+    display: flex;
+    align-items: center;
+    
+    margin-top: 18px;
+    font-size: 12px;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: #535665;
+}
+
+.restaurant-tile-body-desc-ratings {
+    display: flex;
+    align-items: center;
+
+    background-color: #48c479;
+    color: #fff;
+
+    height: 20px;
+    width: 43px;
+    padding: 0 5px;
+    font-weight: 400;
+}
+
+.star {
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}
+
+[class^=icon-] {
+    font-family: icomoon;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.restaurant-tile-body-desc-ratings .icon-star{
+    font-size: 10px;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}
+.show-more-tile {
+    position: relative;
+    width: 254px;
+    background-color: #fff;
+    flex: 1 0 30%; /* explanation below */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #e46d47;
+}
+
+.show-more-title {
+    font-size: 24px;
+    color:#e46d47;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+main {
+    /* height: 100%; */
+
+    max-width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+:root {
+    height: 100%;
+    cursor: default;
+    font-family: gordita,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+body {
+    background-color: #fff;
+    height: inherit;
+}
+
+#root {
+    height: inherit;
+}
+
+ul {
+    padding: 0px;
+    list-style: none;
+}
+
+html {
+    /* scroll-behavior: smooth; */
+}
