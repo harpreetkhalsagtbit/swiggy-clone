@@ -12,5 +12,6 @@ const CategoryList = React.memo(({ categories, selected, updateSelected }) => {
         </ul>
     );
 });
+CategoryList.displayName = 'CategoryList';
 
 export default CategoryList;

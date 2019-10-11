@@ -2,7 +2,7 @@ import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
 import RestaurantTile from '../RestaurantTile/index.js'
 
-describe('<ShowMoreTile /> spec', () => {
+describe('<RestaurantTile /> spec', () => {
     let restaurant = 			{
         "name": "Hot Spot Mini Shop",
         "food_types": ["Fast Food", "Snacks", "North Indian", "Chinese", "Italian", "Desserts", "Beverages"],
@@ -16,7 +16,7 @@ describe('<ShowMoreTile /> spec', () => {
         let container = render(<RestaurantTile restaurant={restaurant}/>)
         expect(container.firstChild).toMatchSnapshot()
     })
-    it('assert there are 12 Show More Tiles', () => {
+    it('assert Show More Tiles displays correct data', () => {
         render(<RestaurantTile restaurant={restaurant}/>)
  
         expect(document.querySelector('.restaurant-tile-body-title').innerHTML).toBe("Hot Spot Mini Shop")
