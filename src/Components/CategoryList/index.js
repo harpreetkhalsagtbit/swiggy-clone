@@ -1,6 +1,6 @@
 import React from "react";
 
-import CategoryItem from '../CategoryItem'
+import CategoryItem from '../CategoryItem/index.js'
 import "./index.css";
 
 const CategoryList = React.memo(({ categories, selected, updateSelected }) => {
