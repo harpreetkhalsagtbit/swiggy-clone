@@ -3,6 +3,7 @@ import React from "react";
 import "./index.css";
 
 const ShowMoreTile = ({ remainingItems, showMore }) => {
+    // Lift state up
     let showMorehandler = () => {
         showMore()
     }

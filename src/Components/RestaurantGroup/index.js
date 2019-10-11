@@ -14,6 +14,9 @@ class RestaurantGroup extends React.PureComponent {
     this.newRowCount = 2;
     this.itemEachRow = 3;
     this.length = this.props.group.restaurantList.length
+
+    // Need to show max five items per category by-default
+    // remainingItems is used for displaying count of items not visible
     this.state = {
       list: this.props.group.restaurantList.slice(0, this.limit),
       remainingItems: this.length - this.limit
@@ -29,6 +32,7 @@ class RestaurantGroup extends React.PureComponent {
   }
 
   showMore() {
+    // Add atmost two more rows
     this.limit += (this.newRowCount * this.itemEachRow)
     this.limit > this.props.group.restaurantList? this.length: this.limit
     this.state = {
@@ -55,6 +59,12 @@ class RestaurantGroup extends React.PureComponent {
             :""
           }
           {
+            /*
+              Hack:
+              Not able to manage things with CSS for two items,
+              two items were center aligned instead of stack to left keeping space for third item
+              so added an empty tile if the last row has two items.
+            */
             (!this.state.remainingItems && this.state.list.length % 3 == 2) ? <EmptyTile></EmptyTile> : ''
           }
 

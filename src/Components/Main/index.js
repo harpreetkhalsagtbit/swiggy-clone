@@ -53,6 +53,7 @@ class Main extends React.PureComponent {
 
   updateSelected(item) {
     if(item != 'See All') {
+      // find out the domRef using category title
       let found = this.childGroupDomRef.find((ref) => {
         return item == ref.title
       })
@@ -64,6 +65,7 @@ class Main extends React.PureComponent {
       }, () => {
         // if RestaurantList component is not Unmounted - By clicking on Select All
         if(found.domRef.current) {
+          // move scroll to current selected category
           window.scrollTo(0,found.domRef.current.offsetTop)
           this.setState((previousState, previousProps) => {
             return {
@@ -89,6 +91,7 @@ class Main extends React.PureComponent {
         }
       })
     } else {
+      // move scroll to top
       window.scrollTo(0,0)
       this.setState((previousState, previousProps) => {
         return {

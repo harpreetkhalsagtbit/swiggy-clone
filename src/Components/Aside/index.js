@@ -1,12 +1,14 @@
 import React from "react";
 import "./index.css";
 import CategoryList from '../CategoryList'
-const AsideLeft = React.memo(({data, selected, updateSelected}) => {
+
+// const AsideLeft = React.memo(({data, selected, updateSelected}) => {
+const AsideLeft = React.memo(({data, ...props}) => {
   let categories = sanitizeData(data)
 
   return (
     <aside>
-      <CategoryList categories={categories}  selected={selected} updateSelected={updateSelected}></CategoryList>
+      <CategoryList categories={categories}  {...props}></CategoryList>
     </aside>
   );
 });
