@@ -25,16 +25,17 @@ class Main extends React.PureComponent {
   }
 
   addChildRef (childRef) {
-    // we need dom ref for scrol events
+    // we need dom ref for scrrol events
     // we are pushing ref from child to parent via state up method
     this.childGroupDomRef.push(childRef)
   }
 
   listenScrollEvent (e) {
-    // Windows scroll event and chaning sccroll event on click
+    // Windows scroll event and changing sccroll event on click
     // of category gets clashed, we need to prevent this default scroll
     // event when category is clicked
     if(!this.state.disableScrollEvent) {
+      // get nearest group
       let found = this.childGroupDomRef.find((ref) => {  
         return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 200 > 0
       })
