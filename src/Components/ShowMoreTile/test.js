@@ -4,7 +4,7 @@ import ShowMoreTile from '../ShowMoreTile/index.js'
 
 describe('<ShowMoreTile /> spec', () => {
     it('renders the component', () => {
-        render(<ShowMoreTile />)
+        let container = render(<ShowMoreTile/>)
         expect(container.firstChild).toMatchSnapshot()
     })
     it('assert there are 12 Show More Tiles', () => {
