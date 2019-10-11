@@ -37,7 +37,7 @@ class Main extends React.PureComponent {
     if(!this.state.disableScrollEvent) {
       // get nearest group
       let found = this.childGroupDomRef.find((ref) => {  
-        return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 200 > 0
+        return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 300 > 0
       })
 
       if(found) {

@@ -20,6 +20,9 @@ const RestaurantTile = ({ restaurant }) => {
                             <div>•</div>
                             <div className="">₹{restaurant.price_for_two} FOR TWO</div>
                         </div>
+                        <div className="restaurant-tile-body-quick-view">
+                            <span role="button" aria-label="Open" className="restaurant-tile-body-quick-view-title">Quick View</span>
+                        </div>
                     </div>
                 </div>
             </a>

@@ -2,6 +2,7 @@ import React from "react";
 
 import "./index.css";
 import RestaurantTile from "../RestaurantTile"
+import EmptyTile from "../EmptyTile"
 import ShowMoreTile from "../ShowMoreTile"
 
 // const RestaurantGroup = ({group, selected}) => {
@@ -53,6 +54,10 @@ class RestaurantGroup extends React.PureComponent {
           <ShowMoreTile remainingItems={this.state.remainingItems} showMore={this.showMore}></ShowMoreTile>
             :""
           }
+          {
+            (!this.state.remainingItems && this.state.list.length % 3 == 2) ? <EmptyTile></EmptyTile> : ''
+          }
+
         </div>
       </div>
     );
