@@ -14,6 +14,7 @@ class Main extends React.PureComponent {
       disableScrollEvent: false
     }
     this.childGroupDomRef = []
+    this.timer= '';
 
     this.addChildRef = this.addChildRef.bind(this)
     this.updateSelected = this.updateSelected.bind(this)
@@ -31,24 +32,45 @@ class Main extends React.PureComponent {
   }
 
   listenScrollEvent (e) {
-    // Windows scroll event and changing sccroll event on click
-    // of category gets clashed, we need to prevent this default scroll
-    // event when category is clicked
-    if(!this.state.disableScrollEvent) {
-      // get nearest group
-      let found = this.childGroupDomRef.find((ref) => {  
-        return ref.domRef.current.offsetTop - window.scrollY + window.screen.availHeight - 300 > 0
-      })
+    // Debounce simultaneous event firing
+    clearTimeout(this.timer)
 
-      if(found) {
-        this.setState((previousState, previousProps) => {
-          return {
-            ...previousState,
-            selected: found.title,
-          };
-        });  
+    this.timer = setTimeout(() => {
+      // Windows scroll event and changing sccroll event on click
+      // of category gets clashed, we need to prevent this default scroll
+      // event when category is clicked
+      if(this.state && !this.state.disableScrollEvent) {
+        // get nearest group
+        let fallback = '';
+        let found = this.childGroupDomRef.find((ref, index) => {
+          var top = ref.domRef.current.getBoundingClientRect().top;
+          var height = ref.domRef.current.getBoundingClientRect().height;
+
+          // Hack
+          // We know that our code works fine when top is in the viewport
+          // but faces issue when current section and appearing section's top
+          // both are not visible because screen size is small and section size
+          // is large, in that case we can highlight earlier section whose
+          // bottom is in the viewport
+          if(top < 0 && top + height > window.innerHeight) {
+            fallback = ref;
+          }
+
+          return top + 1 > 0 && top < window.innerHeight
+        })
+
+        found = found || fallback
+        if(found) {
+          this.setState((previousState, previousProps) => {
+            return {
+              ...previousState,
+              selected: found.title,
+            };
+          });  
+        }
       }
-    }
+    }, 200)
+
   }
 
   updateSelected(item) {
